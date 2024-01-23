@@ -1,6 +1,6 @@
 {
   "name": "zclx-vue",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "zclx-cli project",
   "main": "index.js",
   "bin": {

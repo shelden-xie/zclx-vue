@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: xieyadong
  * @Date: 2024-01-22 09:34:01
- * @LastEditTime: 2024-01-22 18:15:03
+ * @LastEditTime: 2024-01-23 15:56:30
  * @LastEditors: xieyadong
  */
 
@@ -62,7 +62,7 @@ const create = async (project?: string, cmd?: cmdOptions) => {
     await clone(gitRepoInfo?.downloadUrl, project, ['-b', `${gitRepoInfo.branch}`]);
     
     await reWritePackage(templatePath, { name: project,description })
-
+    figlet.defaults({ fontPath: "fonts" });
     console.log('\r\n' + figlet.textSync('ZCLX', {
         font: 'Ghost',
         horizontalLayout: 'full',

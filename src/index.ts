@@ -2,7 +2,7 @@
  * @Description: const 
  * @Author: xieyadong
  * @Date: 2024-01-19 15:43:35
- * @LastEditTime: 2024-01-22 16:26:50
+ * @LastEditTime: 2024-01-23 15:57:24
  * @LastEditors: xieyadong
  */
 import { Command } from 'commander';
@@ -34,6 +34,7 @@ program.on("--help", function () {
     console.log(
         'Run  '+ chalk.green("zclx <command> --help")+'  for detailed usage of given command.'
     );
+    figlet.defaults({ fontPath: "fonts" });
     console.log('\r\n' + figlet.textSync('ZCLX', {
         font: 'Ghost',
         horizontalLayout: 'full',
