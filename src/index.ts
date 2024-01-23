@@ -2,14 +2,14 @@
  * @Description: const 
  * @Author: xieyadong
  * @Date: 2024-01-19 15:43:35
- * @LastEditTime: 2024-01-23 15:57:24
+ * @LastEditTime: 2024-01-23 17:06:22
  * @LastEditors: xieyadong
  */
 import { Command } from 'commander';
 import * as packages from '../package.json';
 import chalk from 'chalk'
 import create from './command/create'
-import figlet from "figlet";
+import {figletHelp} from './utils/files'
 
 
 const program = new Command('zclx');
@@ -34,14 +34,7 @@ program.on("--help", function () {
     console.log(
         'Run  '+ chalk.green("zclx <command> --help")+'  for detailed usage of given command.'
     );
-    figlet.defaults({ fontPath: "fonts" });
-    console.log('\r\n' + figlet.textSync('ZCLX', {
-        font: 'Ghost',
-        horizontalLayout: 'full',
-        verticalLayout: 'default',
-        width: 800,
-        whitespaceBreak: true
-    }))
+    figletHelp();
     console.log();
 });
 

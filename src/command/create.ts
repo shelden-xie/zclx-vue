@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: xieyadong
  * @Date: 2024-01-22 09:34:01
- * @LastEditTime: 2024-01-23 15:56:30
+ * @LastEditTime: 2024-01-23 17:05:50
  * @LastEditors: xieyadong
  */
 
@@ -10,9 +10,8 @@ import path from 'path';
 import fs from 'fs-extra';
 import { input,select } from '@inquirer/prompts';
 import { templates, TemplateInfo } from '../constants'
-import { overWrite, clone,reWritePackage } from '../utils/files'
+import { overWrite, clone,reWritePackage,figletHelp } from '../utils/files'
 import logs from '../utils/log-tips';
-import figlet from "figlet";
 
 interface cmdOptions {
     force?:boolean;
@@ -62,14 +61,7 @@ const create = async (project?: string, cmd?: cmdOptions) => {
     await clone(gitRepoInfo?.downloadUrl, project, ['-b', `${gitRepoInfo.branch}`]);
     
     await reWritePackage(templatePath, { name: project,description })
-    figlet.defaults({ fontPath: "fonts" });
-    console.log('\r\n' + figlet.textSync('ZCLX', {
-        font: 'Ghost',
-        horizontalLayout: 'full',
-        verticalLayout: 'default',
-        width: 800,
-        whitespaceBreak: true
-    }))
+    figletHelp();
 }
 
 export default create;

@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: xieyadong
  * @Date: 2024-01-22 11:40:15
- * @LastEditTime: 2024-01-22 18:27:16
+ * @LastEditTime: 2024-01-23 17:03:22
  * @LastEditors: xieyadong
  */
 import logs from './log-tips';
@@ -13,6 +13,7 @@ import { simpleGit, SimpleGitOptions, SimpleGit } from 'simple-git';
 import fs from 'fs-extra'
 import path from 'path';
 import { packageOption } from './types'
+import figlet from "figlet";
 
 
 // 是否覆盖文件目录
@@ -75,4 +76,16 @@ export const reWritePackage = async (pathName: string, content: packageOption) =
     } catch (error) {
         console.log(error)
     }
+}
+
+export const figletHelp = () => {
+    let data = fs.readFileSync(path.join(__dirname,"..","fonts","Ghost.flf"), "utf8");
+    figlet.parseFont("Ghost", data);
+    console.log('\r\n' + figlet.textSync('ZCLX', {
+        font: 'Ghost',
+        horizontalLayout: 'full',
+        verticalLayout: 'default',
+        width: 800,
+        whitespaceBreak: true
+    }))
 }
