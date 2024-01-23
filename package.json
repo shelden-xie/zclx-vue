@@ -9,6 +9,10 @@
   "engines": {
     "node": ">=16"
   },
+  "files": [
+    "dist",
+    "bin"
+  ],
   "scripts": {
     "dev": "node ./dist/index.js",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
