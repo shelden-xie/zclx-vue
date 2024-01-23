@@ -1,6 +1,6 @@
 {
   "name": "zclx-vue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "zclx-cli project",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,8 @@
   },
   "files": [
     "dist",
-    "bin"
+    "bin",
+    "fonts"
   ],
   "scripts": {
     "dev": "node ./dist/index.js",
